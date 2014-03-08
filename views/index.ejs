@@ -6,7 +6,7 @@
     </p>
     <div class="row genres">
       <% for(genre in genres) { %>
-      <div class="col-xs-6 genre genre-<%= genre %>" data-genre="<%=genre%>">
+      <div class="col-xs-6 genre genre-<%= genre %>" data-genre="<%= genres[genre] %>">
         <img src="images/<%=genre%>.jpg">
         <%= genres[genre] %>
       </div>
