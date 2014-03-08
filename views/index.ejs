@@ -2,10 +2,25 @@
 <html>
   <head>
     <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/boostrap/css/bootstrap.css' />
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="row">
+      <div class="col-sm-row-8">
+      新しい本をゲット！
+      したにメールアドレスを書くだけで、あなたのキャリアが仕事をマグネットのようにゲットするようになります。
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <input type="text" class="form-control">
+      </div>
+      <div class="col-sm-4">
+        <button class="btn btn-danger">登録する</button>
+        <button class="btn">キャンセル</button>
+      </div>
+    </div>
   </body>
 </html>
