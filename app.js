@@ -3,6 +3,8 @@
  * Module dependencies.
  */
 
+Magnet = require('./config')
+
 var coffee = require('coffee-script/register');
 var express = require('express');
 var http = require('http');
@@ -13,8 +15,9 @@ var passport = require('passport');
 var sass = require('node-sass');
 var app = express();
 
+
 mongoose = require('mongoose')
-mongoose.connect("mongodb://localhost:27017/magnet");
+mongoose.connect(Magnet.mongo_url);
 
 var sessionStore = new MongoStore({
   mongoose_connection: mongoose.connections[0],
