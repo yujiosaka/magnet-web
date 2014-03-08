@@ -31,6 +31,8 @@ Magnet.genres = {
     office: '事務'
 }
 
+var passport = require('passport');
+
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
