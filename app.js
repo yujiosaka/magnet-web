@@ -13,10 +13,14 @@ var passport = require('passport');
 var sass = require('node-sass');
 var app = express();
 
-//var sessionStore = new MongoStore({
-//  mongoose_connection: mongoose.connections[0],
-//  clear_interval: 24*60*60 /* In seconds!! */
-//});
+mongoose = require('mongoose')
+mongoose.connect("mongodb://localhost:27017/magnet");
+
+var sessionStore = new MongoStore({
+  mongoose_connection: mongoose.connections[0],
+  clear_interval: 24*60*60 /* In seconds!! */
+});
+
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -30,6 +34,11 @@ app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(express.session({
+  secret: "asDFsdafSDAfasdf", // TODO: hardcoded
+  cookie: {maxAge: 24*60*60 * 1000}, /* in milliseconds. */
+  store: sessionStore
+}));
 app.use(app.router);
 app.use(
     sass.middleware({

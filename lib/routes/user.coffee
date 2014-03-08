@@ -1,11 +1,26 @@
-ObjectId = require('mongoose').Types.ObjectId;
+ObjectId = require('mongoose').Types.ObjectId
 passport = require 'passport'
+User = require 'model/user'
+
 module.exports = (app) ->
 
-  app.get '/login', (req, res) ->
+  app.post '/register', (req, res) ->
+    # Add user
+    user1 = new User
+      name:
+        first: ""
+        last: ""
+      email: req.body.email
+      password: "password" # TOOD: password ;)
+    user1.save (err, user) ->
+      #throw err if err
+      #done()
     res.render "auth/login",
       user: req.user
       pagetype: "login"
+
+  app.get '/login', (req, res) ->
+    res.render "auth/login",
 
   # Logging in
   app.post '/login',

@@ -1,13 +1,12 @@
 mongoose = require 'mongoose'
-
 passport = require('passport')
 bcrypt = require('bcrypt')
 
 # Define schema for our own users
 UserSchema = new mongoose.Schema
   name:
-    first: { type: String, required: true }
-    last: { type: String, required: true }
+    first: { type: String }
+    last: { type: String }
   email: { type: String, required: true, unique: true }
 
   salt: { type: String, required: true }
