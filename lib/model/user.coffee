@@ -8,6 +8,7 @@ UserSchema = new mongoose.Schema
     first: { type: String }
     last: { type: String }
   email: { type: String, required: true, unique: true }
+  genres: { type: Array, required: true }
 
   salt: { type: String, required: true }
   hash: { type: String, required: true }
