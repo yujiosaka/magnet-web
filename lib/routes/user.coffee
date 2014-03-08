@@ -5,7 +5,6 @@ User = require 'model/user'
 module.exports = (app) ->
 
   app.post '/register', (req, res) ->
-    console.log req.body
     # Add user
     user1 = new User
       name:
@@ -15,11 +14,12 @@ module.exports = (app) ->
       genres: JSON.parse(req.body.genres)
       password: "password" # TOOD: password ;)
     user1.save (err, user) ->
-      console.log err if err
-      #done()
-    res.render "auth/login",
-      user: req.user
-      pagetype: "login"
+      if err
+        console.log err
+        req.session.flashMessage = err.err
+        res.redirect "/"
+      else
+        res.render "user", {message: null}
 
   app.get '/login', (req, res) ->
     res.render "auth/login",

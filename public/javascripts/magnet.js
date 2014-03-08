@@ -9,12 +9,9 @@ $(document).ready( function() {
 
     if($(".genre.selected").length > 0) {
       $(".box-email").slideDown(500);
+      $(".box-submit").slideDown(500);
     }
   });
-
-  $(".box-email input").keydown(canShowSubmit);
-  $(".box-email input").change(canShowSubmit);
-  $(".box-email input").blur(canShowSubmit);
 
   $("form").on("submit", function() {
     var genres=[];
@@ -27,7 +24,7 @@ $(document).ready( function() {
 });
 
 function canShowSubmit() {
-  if($(".box-email input").val().indexOf("@") >= 0) {
-   $(".box-submit").slideDown(500);
-  }
+  //if($(".box-email input").val().indexOf("@") >= 0) {
+  // $(".box-submit").slideDown(500);
+  //}
 }

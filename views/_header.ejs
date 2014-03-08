@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Magnet</title>
+    <link rel='stylesheet' href='/stylesheets/boostrap/css/bootstrap.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="icon" type="image/png" href="/images/favicon.ico">
+    <script type="text/javascript" src="javascripts/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="javascripts/magnet.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1><img src="images/magnetlogo.png" title="magnet"></h1>
+          <% if(message) { %>
+          <div class="well">
+            <%= message %>
+          </div>
+          <% } %>
+        </div>
+      </div>

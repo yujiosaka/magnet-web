@@ -1,51 +1,30 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/boostrap/css/bootstrap.css' />
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="icon" type="image/png" href="/images/favicon.ico">
-    <script type="text/javascript" src="javascripts/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="javascripts/magnet.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <h1><img src="images/magnetlogo.png" title="magnet"></h1>
-          <p>
-          新しい本をゲット！ したにメールアドレスを書くだけで、あなたのキャリアが仕事をマグネットのようにゲットするようになります。
-          </p>
-        </div>
+<% include _header %>
+  <form action="/register" class="form-horizontal" method="post">
+    <input type="hidden" name="genres" id="genres" value="">
+    <p>
+    引っ張りだこになりたいジャンレを選んでください。
+    </p>
+    <div class="row genres">
+      <% for(genre in genres) { %>
+      <div class="col-xs-6 genre genre-<%= genre %>" data-genre="<%=genre%>">
+        <img src="images/<%=genre%>.jpg">
+        <%= genres[genre] %>
       </div>
-      <form action="/register" class="form-horizontal" method="post">
-        <input type="hidden" name="genres" id="genres" value="">
-        <p>
-        引っ張りだこになりたいジャンレを選んでください。
-        </p>
-        <div class="row genres">
-          <% for(genre in genres) { %>
-          <div class="col-xs-6 genre genre-<%= genre %>" data-genre="<%=genre%>">
-            <img src="images/<%=genre%>.jpg">
-            <%= genres[genre] %>
-          </div>
-          <% } %>
-        </div>
-        <div class="form-group box-email">
-          <p>
-          どちらに届けてましょうか？
-          </p>
-          <label for="email" class="col-xs-2 control-label">e-mail:</label>
-          <div class="col-xs-10">
-            <input type="text" class="form-control" name="email" id="email">
-          </div>
-        </div>
-        <div class="row box-submit">
-          <div class="col-xs-offset-2 col-xs-12">
-            <input type="submit" class="btn btn-danger" value="引っ張りだこ天才にしてください">
-          </div>
-        </div>
-      </form>
+      <% } %>
     </div>
-  </body>
-</html>
+    <div class="form-group box-email">
+      <p>
+      どちらに届けてましょうか？
+      </p>
+      <label for="email" class="col-xs-2 control-label">e-mail:</label>
+      <div class="col-xs-10">
+        <input type="text" class="form-control" name="email" id="email">
+      </div>
+    </div>
+    <div class="row box-submit">
+      <div class="col-xs-offset-2 col-xs-12">
+        <input type="submit" class="btn btn-danger" value="引っ張りだこ天才にしてください">
+      </div>
+    </div>
+  </form>
+<% include _footer %>

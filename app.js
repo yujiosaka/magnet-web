@@ -24,6 +24,12 @@ var sessionStore = new MongoStore({
   clear_interval: 24*60*60 /* In seconds!! */
 });
 
+Magnet.genres = {
+    development: '開発',
+    design: 'デザイン',
+    writing: 'ライティング',
+    office: '事務'
+}
 
 // all environments
 app.set('port', process.env.PORT || 3000);
