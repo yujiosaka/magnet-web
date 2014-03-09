@@ -1,0 +1,22 @@
+production:
+  sessions:
+    default:
+      database: magnet-large
+      hosts:
+        - tempest.mongohq.com:10045
+      username: user
+      password: testtest
+development:
+  sessions:
+    default:
+      database: magnet-large
+      hosts:
+        - tempest.mongohq.com:10045
+      username: user
+      password: testtest
+#development:
+#  sessions:
+#    default:
+#      database: magnet
+#      hosts:
+#        - localhost:27017
