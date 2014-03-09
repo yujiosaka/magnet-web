@@ -1,0 +1,20 @@
+こんにちは！
+
+こちらは貴様のひっぱりだこ情報です。
+
+<div>
+<img src="<%= @trend_chart[:image_url] %>">
+</div>
+
+<% @books.each do |book|%>
+<div style="clear:both">
+  <div style="float:left">
+    <img src="<%= book[:image] %>">
+  </div>
+  <div>
+    <%= book[:author] %><br>
+    <%= book[:title] %><br>
+    <a href="<%= book[:url] %>">BUY NOW!</a>
+  </div>
+</div>
+<% end %>

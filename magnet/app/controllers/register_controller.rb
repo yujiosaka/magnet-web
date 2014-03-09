@@ -13,7 +13,8 @@ class RegisterController < ApplicationController
   def register
     u = User.new(:email => params[:email], :genres => JSON.parse(params[:genres]))
     if u.valid? and u.save
-      flash[:notice] = "Thank you!"
+      HipparidakoMailer.recommendation_email(u).deliver
+      flash[:notice] = "Thank you! Your recommendations have been delivered!"
     else
       flash[:notice] = u.errors.messages.first
     end
