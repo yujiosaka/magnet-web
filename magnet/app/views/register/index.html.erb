@@ -1,0 +1,28 @@
+<%= form_for @user, url: '/register', html: { class: "form-horizontal"} do %>
+  <input type="hidden" name="genres" id="genres" value="">
+  <p>
+  引っ張りだこになりたいジャンレを選んでください。
+  </p>
+  <div class="row genres">
+    <% @genres.each do |k, genre| %>
+    <div class="col-xs-6 genre genre-<%= k %>" data-genre="<%= genre %>">
+      <%= image_tag "#{k}.jpg" %>
+      <%= genre %>
+    </div>
+  <% end %>
+  </div>
+  <div class="form-group box-email">
+    <p>
+    どちらに届けてましょうか？
+    </p>
+    <label for="email" class="col-xs-2 control-label">e-mail:</label>
+    <div class="col-xs-10">
+      <input type="text" class="form-control" name="email" id="email">
+    </div>
+  </div>
+  <div class="row box-submit">
+    <div class="col-xs-offset-2 col-xs-12">
+      <input type="submit" class="btn btn-danger" value="引っ張りだこ天才にしてください">
+    </div>
+  </div>
+<% end %>

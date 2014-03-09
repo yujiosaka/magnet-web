@@ -47,6 +47,8 @@ GEM
       execjs
     coffee-script-source (1.7.0)
     connection_pool (1.2.0)
+    email_validator (1.4.0)
+      activemodel
     erubis (2.7.0)
     execjs (2.0.2)
     hike (1.2.3)
@@ -128,6 +130,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  email_validator
   jbuilder (~> 1.2)
   jquery-rails
   mongoid!
