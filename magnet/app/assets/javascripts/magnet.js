@@ -40,6 +40,33 @@ $(document).ready( function() {
           a.find("input.othersubmit").slideDown(1000);
       });
   });
+
+  $("form").submit(function() {
+    function add(text) {
+      $(".whathappeningnow").html($(".whathappeningnow").html() + text + "<br>");
+    }
+    var form = this;
+
+    $(".btn-modal").click();
+
+    setTimeout(function() {
+      add("貴様の個人情報をいろんなサイトからダウンロードしています。。。");
+      form.submit();
+    }, 200);
+    setTimeout(function() {
+      add("Yahoo keyword APIで情報を引っ張っています。");
+    }, 2000);
+    setTimeout(function() {
+      add("Rakuten でおすすめの本をクレジットカードで買ってます。");
+    }, 4000);
+    setTimeout(function() {
+      add("グーグルのとレンディーなグラフを作っています。");
+    }, 5500);
+    setTimeout(function() {
+      add("完了しました！(上は嘘でした）");
+    }, 6500);
+  });
+
 });
 
 function canShowSubmit() {
