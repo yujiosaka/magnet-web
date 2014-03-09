@@ -7,10 +7,8 @@ class BooksController < ApplicationController
   end
 
   def view
-    puts params[:category]
-    puts mongo_db()[:books].find({}).limit(10).first
-    render :text => params[:category]
-
+    cat = params[:category]
+    @cats = mongo_db()[:jobs].find({category:cat}).limit(10)
   end
 
   def mongo_db

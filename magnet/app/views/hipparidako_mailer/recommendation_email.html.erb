@@ -7,14 +7,14 @@
 </div>
 
 <% @books.each do |book|%>
-<div style="clear:both">
-  <div style="float:left; width: 70px; padding: 1em 0;">
+<div style="clear:both; margin-bottom: 2em;">
+  <div style="float:left; width: 70px; padding: 0 0 2em 0;">
     <img src="<%= book[:image] %>" style="width: 50px;">
   </div>
   <div style="padding: 0 3em;">
     <%= book[:keyword] %>
     <div><%= book[:author] %></div>
-    <h2><%= book[:title] %></h2>
+    <h2 style="margin: 0;"><%= book[:title] %></h2>
     <a href="<%= book[:url] %>">BUY NOW!</a>
   </div>
 </div>
