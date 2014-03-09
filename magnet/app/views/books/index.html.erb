@@ -1,0 +1,17 @@
+
+<h2>Top key phrases</h2>
+<ol>
+  <% @key_phrases.each do |x| %>
+    <li><%=x.score%>: <%=x.category%>/<%=x.key_phrase%></li>
+  <% end %>
+</ol>
+
+<h2>Trend charts</h2>
+<ol>
+  <% @trend_charts.each do |x| %>
+    <li>
+      <div><img src="<%=x[:image_url]%>"></div>
+      <div><%=x[:category]%> (<%=x[:words].join(",")%>)</div>
+    </li>
+  <% end %>
+</ol>
