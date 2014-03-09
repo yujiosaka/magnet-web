@@ -22,9 +22,21 @@ $(document).ready( function() {
   });
 
   $(".mousehover-area").mouseover(function() {
-      $(".magnet").animate({"opacity": 1}, 200)
-      a = $(this);
-      $(this).find("input.submit").animate({"left": "80%"}, 300, function() {
+      var a = $(this);
+      $({deg: 0}).animate({deg: 90}, {
+          duration: 400,
+          step: function(now) {
+              // in the step-callback (that is fired each step of the animation),
+              // you can use the `now` paramter which contains the current
+              // animation-position (`0` up to `angle`)
+              a.find("input.submit").css({
+                  "transform": 'rotate(' + now + 'deg)',
+                  "-webkit-transform": 'rotate(' + now + 'deg)'
+              });
+          }
+      });
+      $(".magnet").animate({"opacity": 1}, 200);
+      a.find("input.submit").animate({"left": "64%"}, 400, function() {
           a.find("input.othersubmit").slideDown(1000);
       });
   });
