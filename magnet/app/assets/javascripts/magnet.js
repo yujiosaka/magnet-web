@@ -51,16 +51,16 @@ $(document).ready( function() {
 
     setTimeout(function() {
       add("貴様の個人情報をいろんなサイトからダウンロードしています。。。");
-      form.submit();
     }, 200);
     setTimeout(function() {
-      add("Yahoo keyword APIで情報を引っ張っています。");
+      add("求人情報をYahoo keyword APIでマッチングしています。");
+      form.submit();
     }, 2000);
     setTimeout(function() {
       add("Rakuten でおすすめの本をクレジットカードで買ってます。");
     }, 4000);
     setTimeout(function() {
-      add("グーグルのとレンディーなグラフを作っています。");
+      add("グーグルのトレンディーなグラフを作っています。");
     }, 5500);
     setTimeout(function() {
       add("完了しました！(上は嘘でした）");
