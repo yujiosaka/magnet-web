@@ -1,6 +1,6 @@
 こんにちは！
 
-こちらは貴様のひっぱりだこ情報です。
+こちらは貴様の今月のひっぱりだこ情報です。
 
 <div>
 <img src="<%= @trend_chart[:image_url] %>">
@@ -8,12 +8,13 @@
 
 <% @books.each do |book|%>
 <div style="clear:both">
-  <div style="float:left">
-    <img src="<%= book[:image] %>">
+  <div style="float:left; width: 70px; padding: 1em 0;">
+    <img src="<%= book[:image] %>" style="width: 50px;">
   </div>
-  <div>
-    <%= book[:author] %><br>
-    <%= book[:title] %><br>
+  <div style="padding: 0 3em;">
+    <%= book[:keyword] %>
+    <div><%= book[:author] %></div>
+    <h2><%= book[:title] %></h2>
     <a href="<%= book[:url] %>">BUY NOW!</a>
   </div>
 </div>
