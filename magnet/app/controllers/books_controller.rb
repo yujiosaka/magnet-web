@@ -1,9 +1,9 @@
 class BooksController < ApplicationController
   def index
-    @key_phrases = KeyPhrase.order(:score.desc).limit(10)
-    #@trend_charts = TrendChart.where(:image_url => {"$exists" => true }).limit(5)
-    @trend_charts =  mongo_db()[:trend_charts].find({"image_url" => {"$exists" => true }}).limit(10)
-    puts @trend_charts.count
+    @key_phrases = KeyPhrase.where(:is_skill => true).order(:total_score.desc).limit(20)
+    @trend_charts = TrendChart.where("image_url" => {"$exists" => true }).limit(10)
+    #@trend_charts =  mongo_db()[:trend_charts].find({"image_url" => {"$exists" => true }}).limit(10)
+    #puts @trend_charts.count
   end
 
   def view

@@ -5,6 +5,10 @@ Magnet::Application.routes.draw do
   root "register#index"
 
   post '/register' => 'register#register'
+
+  get '/books/:category' => 'books#view'
+  get '/books' => 'books#index'
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

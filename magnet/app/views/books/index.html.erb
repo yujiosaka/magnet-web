@@ -2,7 +2,7 @@
 <h2>Top key phrases</h2>
 <ol>
   <% @key_phrases.each do |x| %>
-    <li><%=x.score%>: <%=x.category%>/<%=x.key_phrase%></li>
+    <li>total: <%=x.total_score%> (<%= x.total_count %>, avg.<%= x.total_score / x.total_count %>): <%=x.category%>/<%=x.key_phrase%></li>
   <% end %>
 </ol>
 
@@ -12,6 +12,9 @@
     <li>
       <div><img src="<%=x[:image_url]%>"></div>
       <div><%=x[:category]%> (<%=x[:words].join(",")%>)</div>
+      <% if(!x[:books].nil?) %>
+      <div><%=x[:books].join(",")%></div>
+      <% end %>
     </li>
   <% end %>
 </ol>
