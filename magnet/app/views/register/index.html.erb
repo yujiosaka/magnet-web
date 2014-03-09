@@ -21,8 +21,14 @@
     </div>
   </div>
   <div class="row box-submit">
+    <div class="magnet">
+      <%= image_tag "magnet.png" %>
+    </div>
     <div class="col-xs-offset-2 col-xs-12">
-      <input type="submit" class="btn btn-danger" value="引っ張りだこ天才にしてください">
+      <div class="mousehover-area">
+      <input type="submit" class="btn btn-danger submit" value="引っ張りだこ天才にしてください">
+      <input type="submit" class="btn btn-primary othersubmit" value="そんな" style="display:none">
+    </div>
     </div>
   </div>
 <% end %>

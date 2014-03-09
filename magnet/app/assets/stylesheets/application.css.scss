@@ -100,3 +100,19 @@ a {
 .box-email {
   display: none;
 }
+
+.mousehover-area input.submit {
+    position: absolute;
+    left: 0;
+}
+.mousehover-area input.othersubmit {
+    position: absolute;
+    left: 0;
+}
+
+.magnet {
+    position: absolute;
+    left: 90%;
+    margin-top: -150px;
+    opacity: 0;
+}

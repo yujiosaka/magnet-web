@@ -21,6 +21,13 @@ $(document).ready( function() {
     $("input#genres").val(JSON.stringify(genres));
   });
 
+  $(".mousehover-area").mouseover(function() {
+      $(".magnet").animate({"opacity": 1}, 200)
+      a = $(this);
+      $(this).find("input.submit").animate({"left": "80%"}, 300, function() {
+          a.find("input.othersubmit").slideDown(1000);
+      });
+  });
 });
 
 function canShowSubmit() {
